@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_8/comp/custom.dart';
 
 void main() {
-  runApp(MaterialApp(
+   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
