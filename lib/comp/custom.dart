@@ -16,12 +16,12 @@ class custom extends StatelessWidget {
   String? URL2;
   String? URL3;
   String? URL4;
-  
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             "data",
