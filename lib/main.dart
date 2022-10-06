@@ -52,12 +52,9 @@ class _MyAppState extends State<MyApp> {
                     }
                     return custom(
                         URL1: "${image[currentPage]}",
-                        URL2:
-                            "${image[currentPage]}",
-                        URL3:
-                            "${image[currentPage]}",
-                        URL4:
-                            "${image[currentPage]}");
+                        URL2: "${image[currentPage]}",
+                        URL3: "${image[currentPage]}",
+                        URL4: "${image[currentPage]}");
                   },
                 ),
               ),
@@ -74,3 +71,4 @@ class _MyAppState extends State<MyApp> {
         ));
   }
 }
+//malek 
