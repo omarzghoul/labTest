@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_8/comp/custom.dart';
+import 'package:flutter_application_8/component/Page_builder.dart';
+import 'package:flutter_application_8/component/SoundQa.dart';
+import 'package:flutter_application_8/component/custom.dart';
+import 'package:flutter_application_8/screens/LeasingQuiz.dart';
 
 void main() {
-   runApp(MaterialApp(
+  runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
@@ -33,43 +36,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(),
-        body: SafeArea(
-          child: Column(
-            children: [
-              Expanded(
-                child: PageView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  controller: controller,
-                  scrollDirection: Axis.vertical,
-                  itemCount: questions.length + 1,
-                  itemBuilder: (context, index) {
-                    if (index == questions.length) {
-                      return Container(
-                        child: Text(""),
-                        color: Colors.amber,
-                      );
-                    }
-                    return custom(
-                        URL1: "${image[currentPage]}",
-                        URL2: "${image[currentPage]}",
-                        URL3: "${image[currentPage]}",
-                        URL4: "${image[currentPage]}");
-                  },
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  if (currentPage == questions.length) return;
-
-                  controller.jumpToPage(++currentPage);
-                },
-                child: const Text('Next'),
-              )
-            ],
-          ),
-        ));
+    return Scaffold(appBar: AppBar(), body: LeasingQuiz());
   }
 }
 //malek 
