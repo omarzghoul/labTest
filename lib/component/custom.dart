@@ -9,9 +9,6 @@ class custom extends StatelessWidget {
     required this.URL2,
     required this.URL3,
     required this.URL4,
-
-  
-    
   });
   Color def = Colors.white;
 
@@ -19,13 +16,12 @@ class custom extends StatelessWidget {
   String? URL2;
   String? URL3;
   String? URL4;
-  
-  
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             "data",
