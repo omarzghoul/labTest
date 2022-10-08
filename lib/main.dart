@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_8/comp/custom.dart';
+import 'package:flutter_application_8/component/Page_builder.dart';
+import 'package:flutter_application_8/component/SoundQa.dart';
+import 'package:flutter_application_8/component/custom.dart';
+import 'package:flutter_application_8/screens/LeasingQuiz.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -82,6 +85,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.deepPurple.shade100,
@@ -180,5 +184,8 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
         ));
+=======
+    return Scaffold(appBar: AppBar(), body: LeasingQuiz());
+>>>>>>> 0e8c88cc345dcf1241b8db25f97ed461738fcb76
   }
 }
