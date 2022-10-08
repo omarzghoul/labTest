@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/Screens/Quiz.dart';
 import 'package:myapp/comp/url.dart';
 import 'package:url_launcher/url_launcher.dart';
 
