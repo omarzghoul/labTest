@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import 'package:myapp/component/AnsAlertDialog.dart';
+
 class custom extends StatelessWidget {
   custom(
       {required this.URL1,
@@ -52,21 +54,7 @@ class custom extends StatelessWidget {
             child: GridView.count(crossAxisCount: 2, children: [
               GestureDetector(
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          icon: Icon(Icons.close, color: Colors.red),
-                          title: Text(
-                            "Sorry , it is wrong answer ... try again ",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: "Lobster",
-                                color: Colors.redAccent),
-                          ),
-                        );
-                      },
-                    );
+                    showDialog2(context);
                   },
                   child: Container(
                     child: Image.asset(
@@ -78,21 +66,7 @@ class custom extends StatelessWidget {
                   )),
               GestureDetector(
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          icon: Icon(Icons.close, color: Colors.red),
-                          title: Text(
-                            "Sorry , it is wrong answer ... try again ",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: "Lobster",
-                                color: Colors.redAccent),
-                          ),
-                        );
-                      },
-                    );
+                    showDialog2(context);
                   },
                   child: Container(
                     child: Image.asset(
@@ -104,23 +78,7 @@ class custom extends StatelessWidget {
                   )),
               GestureDetector(
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          icon: Icon(
-                            Icons.close,
-                            color: Colors.red,
-                          ),
-                          title: Text(
-                              "Sorry , it is wrong answer ... try again  ",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: "Lobster",
-                                  color: Colors.redAccent)),
-                        );
-                      },
-                    );
+                    showDialog2(context);
                   },
                   child: Container(
                     child: Image.asset(
@@ -132,23 +90,7 @@ class custom extends StatelessWidget {
                   )),
               GestureDetector(
                   onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          icon: Icon(
-                            Icons.done,
-                            color: Colors.green,
-                          ),
-                          title: Text(
-                              "Awesome ... good for you , keep practicing,",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: "Lobster",
-                                  color: Colors.green)),
-                        );
-                      },
-                    );
+                    showDialog1(context);
                   },
                   child: Container(
                     child: Image.asset(
@@ -162,6 +104,32 @@ class custom extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  void showDialog1(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AnsAlertDialog(
+            massage: "Awesome ... good for you , keep practicing,",
+            colorIcon: Colors.green,
+            colorText: Colors.green,
+            icon: Icons.done);
+      },
+    );
+  }
+
+  void showDialog2(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AnsAlertDialog(
+            massage: "Sorry , it is wrong answer ... try again ",
+            colorIcon: Colors.red,
+            colorText: Colors.red,
+            icon: Icons.close);
+      },
     );
   }
 }

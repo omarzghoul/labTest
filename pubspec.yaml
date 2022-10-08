@@ -87,6 +87,14 @@ flutter:
         - asset: Fonts\Lobster-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+    - family: BungeeSpice
+      fonts:
+        - asset: Fonts/BungeeSpice-Regular.ttf
+    
+    - family: Anton
+      fonts:
+        - asset: Fonts/Anton-Regular.ttf
+        
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

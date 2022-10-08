@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Screens/ImageQuiz.dart';
-import 'package:myapp/Screens/LeasingQuiz.dart';
-import 'package:myapp/comp/url.dart';
+import 'package:myapp/Screens/ListeningQuiz.dart';
+import 'package:myapp/component/url.dart';
+
+import 'package:myapp/component/url.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:myapp/Screens/ReadQuiz.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -77,7 +80,7 @@ class _homeState extends State<home> {
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return LeasingQuiz();
+                        return ListeningQuiz();
                       },
                     ));
                   },
@@ -94,11 +97,11 @@ class _homeState extends State<home> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.deepPurple.shade400),
                   onPressed: () {
-                    // Navigator.push(context, MaterialPageRoute(
-                    //   builder: (context) {
-                    //     return;
-                    //   },
-                    // ));
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Reading();
+                      },
+                    ));
                   },
                   icon: Icon(
                     Icons.abc,
