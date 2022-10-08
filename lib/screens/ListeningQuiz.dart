@@ -67,7 +67,7 @@ class _LeasingQuizState extends State<LeasingQuiz> {
         title: Center(child: Text("LeasingQuiz")),
         backgroundColor: Color(0xff1C6758),
         leading: IconButton(
-            onPressed: (){
+            onPressed: () {
               Navigator.pop(context, MaterialPageRoute(
                 builder: (context) {
                   return home();
