@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Screens/ImageQuiz.dart';
+import 'package:myapp/Screens/LeasingQuiz.dart';
 import 'package:myapp/comp/url.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -74,11 +75,11 @@ class _homeState extends State<home> {
                   style: ElevatedButton.styleFrom(
                       primary: Colors.deepPurple.shade400),
                   onPressed: () {
-                    // Navigator.push(context, MaterialPageRoute(
-                    //   builder: (context) {
-                    //     return;
-                    //   },
-                    // ));
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return LeasingQuiz();
+                      },
+                    ));
                   },
                   icon: Icon(
                     Icons.audio_file,
