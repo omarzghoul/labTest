@@ -6,19 +6,17 @@ import 'package:flutter/src/widgets/framework.dart';
 class Page_bulider extends StatelessWidget {
   Page_bulider(
       {super.key,
-      
       this.questions,
       required this.controller,
       required this.ontap,
-      required this.itemBuilder
-      });
+      required this.itemBuilder});
   final PageController controller;
 
   List<String>? questions;
-  
+
   Function()? ontap;
 
-   Widget Function (BuildContext,int ) itemBuilder;
+  Widget Function(BuildContext, int) itemBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +31,16 @@ class Page_bulider extends StatelessWidget {
             itemBuilder: itemBuilder,
           ),
         ),
-        TextButton(
-          onPressed: ontap,
-          child: const Text('Next'),
+        Container(
+          padding: EdgeInsets.all(8),
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: ontap,
+            child: const Text('Next'),
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D8361)),
+          ),
         )
       ],
     );
   }
-
- 
 }

@@ -14,28 +14,68 @@ class LeasingQuiz extends StatefulWidget {
 class _LeasingQuizState extends State<LeasingQuiz> {
   final PageController controller = PageController();
 
-  List<String> questions = ["qa1", "sdds", "sdsd"];
-
   int currentPage = 0;
 
-  List<String> sounds = ["1.mp3"];
+  List<String> sounds = [
+    "Q1.mp3",
+    "Q2.mp3",
+    "Q3.mp3",
+    "Q4.mp3",
+    "Q5.mp3",
+    "Q6.mp3",
+    "Q7.mp3"
+  ];
 
-  List<String> ans1 = ["ans1.1", "ans2.1", "ans3.1"];
+  List<String> ans1 = ["Brain", "Ship", "Huge", "Road", "Ugly", "Fear", "Sad"];
 
-  List<String> ans2 = ["ans1.2", "ans2.2", "ans3.2"];
+  List<String> ans2 = [
+    "Behind",
+    "Airport",
+    "Fat",
+    "Train",
+    "Disgust",
+    "Cower",
+    "Cheerful"
+  ];
 
-  List<String> ans3 = ["ans1.3", "ans2.3", "ans3.3"];
+  List<String> ans3 = [
+    "Century",
+    "Sea",
+    "Tall",
+    "Street",
+    "Bad",
+    "Worry",
+    "Bad"
+  ];
 
-  List<String> ans4 = ["ans1.4", "ans2.4", "ans3.4"];
+  List<String> ans4 = [
+    "School",
+    "City",
+    "Short",
+    "Vehicle",
+    "Handsome",
+    "Adventurous",
+    "exhausted"
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Color(0xffEEF2E6),
+      appBar: AppBar(
+        title: Center(child: Text("LeasingQuiz")),
+        backgroundColor: Color(0xff1C6758),
+        leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.home,
+              color: Colors.white,
+            )),
+      ),
       body: SafeArea(
         child: Page_bulider(
           itemBuilder: (context, index) {
-            if (index == questions?.length) {
+            if (index == sounds?.length) {
               return Container(
                 child: Text(""),
                 color: Colors.amber,
@@ -46,11 +86,11 @@ class _LeasingQuizState extends State<LeasingQuiz> {
               ans2: "${ans2[currentPage]}",
               ans3: "${ans3[currentPage]}",
               ans4: "${ans4[currentPage]}",
-              soundPath: "hi.mp3",
+              soundPath: "${sounds[currentPage]}",
             );
           },
           ontap: () {
-            if (currentPage == questions.length) return;
+            if (currentPage == sounds.length) return;
             setState(() {
               controller.jumpToPage(++currentPage);
             });
@@ -58,7 +98,7 @@ class _LeasingQuizState extends State<LeasingQuiz> {
             print(currentPage);
           },
           controller: controller,
-          questions: questions,
+          questions: sounds,
         ),
       ),
     );

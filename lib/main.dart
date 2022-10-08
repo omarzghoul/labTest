@@ -3,7 +3,7 @@ import 'package:flutter_application_8/component/Page_builder.dart';
 import 'package:flutter_application_8/component/SoundQa.dart';
 import 'package:flutter_application_8/component/custom.dart';
 import 'package:flutter_application_8/screens/ImageQuiz.dart';
-import 'package:flutter_application_8/screens/LeasingQuiz.dart';
+import 'package:flutter_application_8/screens/ListeningQuiz.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -24,6 +24,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return ImageQuzi();
+    return LeasingQuiz();
   }
 }
