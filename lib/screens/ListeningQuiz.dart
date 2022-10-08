@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_8/component/Page_builder.dart';
-import 'package:flutter_application_8/component/SoundQa.dart';
+import 'package:myapp/component/Page_builder.dart';
+import 'package:myapp/component/SoundQa.dart';
+import 'package:myapp/screens/Home.dart';
 
 class LeasingQuiz extends StatefulWidget {
   LeasingQuiz({super.key});
@@ -66,7 +67,13 @@ class _LeasingQuizState extends State<LeasingQuiz> {
         title: Center(child: Text("LeasingQuiz")),
         backgroundColor: Color(0xff1C6758),
         leading: IconButton(
-            onPressed: () {},
+            onPressed: (){
+              Navigator.pop(context, MaterialPageRoute(
+                builder: (context) {
+                  return home();
+                },
+              ));
+            },
             icon: Icon(
               Icons.home,
               color: Colors.white,

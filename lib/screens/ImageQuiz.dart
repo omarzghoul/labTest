@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_8/component/Page_builder.dart';
-import 'package:flutter_application_8/component/custom.dart';
+import 'package:myapp/Screens/Home.dart';
+import 'package:myapp/component/Page_builder.dart';
+import 'package:myapp/component/SoundQa.dart';
+import 'package:myapp/component/custom.dart';
 
 class ImageQuzi extends StatefulWidget {
   const ImageQuzi({super.key});
@@ -13,7 +15,7 @@ class ImageQuzi extends StatefulWidget {
 
 class _ImageQuziState extends State<ImageQuzi> {
   final PageController controller = PageController();
-   int currentPage = 0;
+  int currentPage = 0;
 
   List<String> questions = [
     'Which of these shapes belongs to the boy ?',
@@ -80,18 +82,24 @@ class _ImageQuziState extends State<ImageQuzi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.deepPurple.shade100,
-          title: Text(
-            "English for begginers",
-            style: TextStyle(color: Color.fromARGB(255, 13, 81, 136)),
-          ),
-          leading: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.home,
-                color: Color.fromARGB(255, 13, 81, 136),
-              )),
+        backgroundColor: Colors.deepPurple.shade100,
+        title: Text(
+          "English for begginers",
+          style: TextStyle(color: Color.fromARGB(255, 13, 81, 136)),
         ),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context, MaterialPageRoute(
+                builder: (context) {
+                  return home();
+                },
+              ));
+            },
+            icon: Icon(
+              Icons.home,
+              color: Color.fromARGB(255, 13, 81, 136),
+            )),
+      ),
       body: SafeArea(
         child: Page_bulider(
           itemBuilder: (context, index) {
@@ -99,12 +107,12 @@ class _ImageQuziState extends State<ImageQuzi> {
               return info();
             }
             return custom(
-                        URL1: "${image[currentPage]}",
-                        URL2: "${image1[currentPage]}",
-                        URL3: "${image2[currentPage]}",
-                        URL4: "${image3[currentPage]}",
-                        question: "${questions[currentPage]}",
-                      );
+              URL1: "${image[currentPage]}",
+              URL2: "${image1[currentPage]}",
+              URL3: "${image2[currentPage]}",
+              URL4: "${image3[currentPage]}",
+              question: "${questions[currentPage]}",
+            );
           },
           ontap: () {
             if (currentPage == questions.length) return;
@@ -120,51 +128,50 @@ class _ImageQuziState extends State<ImageQuzi> {
       ),
     );
   }
-  Widget info(){
-    return  Container(
-                          color: Colors.amber.shade300,
-                          child: Column(children: [
-                            Container(
-                              alignment: Alignment.topCenter,
-                              child: ElevatedButton.icon(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.info),
-                                  label: Text("information")),
-                            ),
-                            Text(
-                              "- Boy: it is a noun : A boy is a child who will grow up to be a man.",
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            Text(
-                                "Synonyms: lad, kid [informal], youth, fellow [old-fashioned] ",
-                                style: TextStyle(fontSize: 20)),
-                            Text(
-                                "-Fruit or a fruit is something which grows on a tree or bush and which contains seeds or a stone covered by a substance that you can eat.",
-                                style: TextStyle(fontSize: 20)),
-                            Text(
-                                "- shape of an object, a person, or an area is the appearance of their outside edges or surfaces, for example whether they are round, square, curved, or fat.",
-                                style: TextStyle(fontSize: 20)),
-                            Text(
-                                "- An animal is a living creature such as a dog, lion, or rabbit, rather than a bird, fish, insect, or human being.",
-                                style: TextStyle(fontSize: 20)),
-                            Text(
-                                "- A planet is a large, round object in space that moves around a star. The Earth is a planet.",
-                                style: TextStyle(fontSize: 20)),
-                            Text(
-                                "- A building is a structure that has a roof and walls, for example a house or a School.",
-                                style: TextStyle(fontSize: 20)),
-                            Text(
-                                "- Transport refers to any vehicle that you can travel in or carry goods in.",
-                                style: TextStyle(fontSize: 20)),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Thank you to use This App",
-                              style: TextStyle(
-                                  fontSize: 20, fontFamily: "Peralta"),
-                            )
-                          ]),
-                        );
+
+  Widget info() {
+    return Container(
+      color: Colors.amber.shade300,
+      child: Column(children: [
+        Container(
+          alignment: Alignment.topCenter,
+          child: ElevatedButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.info),
+              label: Text("information")),
+        ),
+        Text(
+          "- Boy: it is a noun : A boy is a child who will grow up to be a man.",
+          style: TextStyle(fontSize: 20),
+        ),
+        Text("Synonyms: lad, kid [informal], youth, fellow [old-fashioned] ",
+            style: TextStyle(fontSize: 20)),
+        Text(
+            "-Fruit or a fruit is something which grows on a tree or bush and which contains seeds or a stone covered by a substance that you can eat.",
+            style: TextStyle(fontSize: 20)),
+        Text(
+            "- shape of an object, a person, or an area is the appearance of their outside edges or surfaces, for example whether they are round, square, curved, or fat.",
+            style: TextStyle(fontSize: 20)),
+        Text(
+            "- An animal is a living creature such as a dog, lion, or rabbit, rather than a bird, fish, insect, or human being.",
+            style: TextStyle(fontSize: 20)),
+        Text(
+            "- A planet is a large, round object in space that moves around a star. The Earth is a planet.",
+            style: TextStyle(fontSize: 20)),
+        Text(
+            "- A building is a structure that has a roof and walls, for example a house or a School.",
+            style: TextStyle(fontSize: 20)),
+        Text(
+            "- Transport refers to any vehicle that you can travel in or carry goods in.",
+            style: TextStyle(fontSize: 20)),
+        SizedBox(
+          height: 15,
+        ),
+        Text(
+          "Thank you to use This App",
+          style: TextStyle(fontSize: 20, fontFamily: "Peralta"),
+        )
+      ]),
+    );
   }
 }

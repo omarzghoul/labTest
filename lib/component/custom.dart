@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_8/component/AnsAlertDialog.dart';
+
+import 'package:myapp/component/AnsAlertDialog.dart';
 
 class custom extends StatelessWidget {
   custom(
