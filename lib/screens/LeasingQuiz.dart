@@ -46,7 +46,7 @@ class _LeasingQuizState extends State<LeasingQuiz> {
               ans2: "${ans2[currentPage]}",
               ans3: "${ans3[currentPage]}",
               ans4: "${ans4[currentPage]}",
-              soundPath: "1.mp3",
+              soundPath: "hi.mp3",
             );
           },
           ontap: () {

@@ -4,13 +4,17 @@ import 'package:audioplayers/audioplayers.dart';
 
 class SoundQa extends StatefulWidget {
   SoundQa(
-      {super.key,required this.ans1,required this.ans2,required this.ans3,required this.ans4,required this.soundPath});
+      {super.key,
+      required this.ans1,
+      required this.ans2,
+      required this.ans3,
+      required this.ans4,
+      required this.soundPath});
   String? ans1;
   String? ans2;
   String? ans3;
   String? ans4;
   String? soundPath;
-  
 
   @override
   State<SoundQa> createState() => _SoundQaState();
@@ -46,6 +50,22 @@ class _SoundQaState extends State<SoundQa> {
       onChanged: (value) {
         setState(() {
           groupVal = value.toString();
+          if (val == widget.ans4)
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  actions: [
+                    Container(
+                      child: Text("Ss"),
+                      color: Colors.black,
+                      width: 200,
+                      height: 200,
+                    )
+                  ],
+                );
+              },
+            );
         });
       },
     );
